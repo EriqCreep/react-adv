@@ -26,25 +26,32 @@ nav {
   margin-right: 15px;
   overflow-y: auto;
   text-align: center;
-  width: 250px;
+  width: fit-content;
+  max-width: 250px;
+  padding: 16px;
 }
+
+nav img {
+  max-width: 100px;
+}
+
 nav ul {
-  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding-left: 0;
 }
 
 nav li {
   list-style: none;
   margin-bottom: 10px;
+  text-align: left;
 }
 
 nav li a {
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .nav-active {
