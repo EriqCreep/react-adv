@@ -31,7 +31,7 @@ export const Navigation = () => {
             </ul>
           </nav>
 
-          <div>
+          <div className="content">
             <Routes>
               {routes.map(({ path, component: Component }) => (
                 <Route key={path} path={path} element={<Component />} />
