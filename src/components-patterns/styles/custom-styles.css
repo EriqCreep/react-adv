@@ -1,0 +1,18 @@
+.bg-black {
+  background-color: black;
+}
+
+.text-danger {
+  color: red;
+}
+
+.custom-image {
+  width: calc(100% - 20px);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.custom-buttons button, .custom-buttons div {
+    background-color: white;
+    color: black;
+}

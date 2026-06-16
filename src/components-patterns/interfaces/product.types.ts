@@ -1,26 +1,9 @@
-import { JSX, ReactElement } from "react";
+import { JSX } from "react";
 import { Product } from "./product.interface";
-
-export interface ProductImageProps {
-  img?: string;
-  alt?: string;
-}
-
-export interface ProductDescriptionProps {
-  name?: string;
-  description?: string;
-}
-
-export interface ProductButtonsProps {
-  increaseCountBy: (value: number) => void;
-  count: number;
-}
-
-export interface ProductCardProps {
-  product: Product;
-  children?: ReactElement | ReactElement[];
-}
-
+import { ProductCardProps } from "../components/ProductCard";
+import { ProductDescriptionProps } from "../components/ProductDescription";
+import { ProductImageProps } from "../components/ProductImage";
+import { ProductButtonsProps } from "../components/ProductButtons";
 export interface ProductContextProps {
   product: Product;
   count: number;
@@ -28,8 +11,8 @@ export interface ProductContextProps {
 }
 
 export interface ProductCardHOCProps {
-  ({ product, children }: ProductCardProps) : JSX.Element;
-  Image: ({ img, alt }: ProductImageProps) => JSX.Element;
-  Description: ({ name, description }: ProductDescriptionProps) => JSX.Element;
-  Buttons: () => JSX.Element;
+  (Props: ProductCardProps): JSX.Element;
+  Image: (Props: ProductImageProps) => JSX.Element;
+  Description: (Props: ProductDescriptionProps) => JSX.Element;
+  Buttons: (Props: ProductButtonsProps) => JSX.Element;
 }
