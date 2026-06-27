@@ -16,3 +16,9 @@
     background-color: white;
     color: black;
 }
+
+.shopping-cart {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+}
