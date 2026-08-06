@@ -58,3 +58,9 @@
 .buttonAdd:hover {
   border-color: var(--primary);
 }
+
+.buttonAdd:disabled, .buttonAdd.disabled , .buttonAddDisabled{
+  cursor: not-allowed;
+  border-color: var(--border);
+  opacity: 0.5;
+}

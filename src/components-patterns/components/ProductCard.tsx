@@ -1,26 +1,49 @@
-import { createContext, CSSProperties, ReactElement } from "react";
+import { createContext, CSSProperties, JSX, ReactElement } from "react";
 import { useProduct } from "../hooks/useProduct";
 import styles from "../styles/styles.module.css";
-import { OnChangeProductEvents, ProductContextProps } from "../interfaces/product.types";
+import {
+  OnChangeProductEvents,
+  ProductCardHandlers,
+  ProductCardInitialValues,
+  ProductContextProps,
+} from "../interfaces/product.types";
 import { Product } from "../interfaces/product.interface";
 
 export interface ProductCardProps {
   product: Product;
-  children?: ReactElement | ReactElement[];
+  children?:
+    | ReactElement
+    | ReactElement[]
+    | ((args: ProductCardHandlers) => JSX.Element);
   className?: string;
   style?: CSSProperties;
   onChange?: (event: OnChangeProductEvents) => void;
   value?: number;
+  initialValues?: ProductCardInitialValues;
 }
 
 export const ProductContext = createContext({} as ProductContextProps);
 const { Provider } = ProductContext;
 
-export const ProductCard = ({ product, children, className, style, onChange, value }: ProductCardProps) => {
-  const { count, increaseCountBy } = useProduct({product, value, onChange});
+export const ProductCard = ({
+  product,
+  children,
+  className,
+  style,
+  onChange,
+  value,
+  initialValues,
+}: ProductCardProps) => {
+  const { count, increaseCountBy, maxCount, isMaxCountReached, resetCount } =
+    useProduct({
+      product,
+      value,
+      onChange,
+      initialValues,
+    });
 
   return (
-    <Provider value={{ product, count, increaseCountBy }}>
+    <Provider value={{ product, count, increaseCountBy, maxCount }}>
       <div className={`${styles.productCard} ${className}`} style={style}>
         {/* <ProductImage img={product.imageUrl} alt={product.name} />
         <ProductDescription
@@ -28,7 +51,17 @@ export const ProductCard = ({ product, children, className, style, onChange, val
           description={product.description}
         />
         <ProductButtons /> */}
-        {children}
+        {children &&
+          (typeof children === "function"
+            ? children({
+                product,
+                count,
+                increaseCountBy,
+                maxCount,
+                isMaxCountReached,
+                resetCount,
+              })
+            : children)}
       </div>
     </Provider>
   );

@@ -1,6 +1,7 @@
 import { JSX, lazy, LazyExoticComponent } from "react";
 import NoLazy from "../lazyload/pages/NoLazy";
 import { ShoppingPage } from "../components-patterns/pages/ShoppingPage";
+import { ShoppingPageInitializer } from "../components-patterns/pages/ShopingPageInitializer";
 // import { AboutPage } from "../lazyload/pages/AboutPage";
 // import { HomePage } from "../lazyload/pages/HomePage";
 // import { UserPage } from "../lazyload/pages/UserPage";
@@ -38,6 +39,11 @@ export const routes: Route[] = [
     name: "Shoping",
     component: ShoppingPage,
   },
+  {
+    path: "/shoppingInitializer",
+    name: "Shopping Initializer",
+    component: ShoppingPageInitializer,
+  }
   //   {
   //     path: "/",
   //     name: "Home",

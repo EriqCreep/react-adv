@@ -7,6 +7,7 @@ import { ProductButtonsProps } from "../components/ProductButtons";
 export interface ProductContextProps {
   product: Product;
   count: number;
+  maxCount?: number;
   increaseCountBy: (value: number) => void;
 }
 
@@ -24,4 +25,19 @@ export interface OnChangeProductEvents {
 
 export interface ProductInCart extends Product {
   count: number;
+}
+
+export interface ProductCardInitialValues {
+  count?: number;
+  maxCount?: number;
+}
+
+export interface ProductCardHandlers {
+  count: number;
+  isMaxCountReached: boolean;
+  maxCount?: number;
+  product: Product;
+
+  increaseCountBy: (value: number) => void;
+  resetCount: () => void;
 }
