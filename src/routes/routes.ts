@@ -2,6 +2,13 @@ import { JSX, lazy, LazyExoticComponent } from "react";
 import NoLazy from "../lazyload/pages/NoLazy";
 import { ShoppingPage } from "../components-patterns/pages/ShoppingPage";
 import { ShoppingPageInitializer } from "../components-patterns/pages/ShopingPageInitializer";
+import {
+  RegisterPages,
+  FormikBasicPage,
+  FormikBasicYupPage,
+  FormikBasicComponentsPage,
+  FormikBasicAbstractPage,
+} from "../forms/pages";
 // import { AboutPage } from "../lazyload/pages/AboutPage";
 // import { HomePage } from "../lazyload/pages/HomePage";
 // import { UserPage } from "../lazyload/pages/UserPage";
@@ -43,7 +50,32 @@ export const routes: Route[] = [
     path: "/shoppingInitializer",
     name: "Shopping Initializer",
     component: ShoppingPageInitializer,
-  }
+  },
+  {
+    path: "/register",
+    name: "Register",
+    component: RegisterPages,
+  },
+  {
+    path: "/formik",
+    name: "Formik",
+    component: FormikBasicPage,
+  },
+  {
+    path: "/formik-yup",
+    name: "Formik Yup",
+    component: FormikBasicYupPage,
+  },
+  {
+    path: "/formik-components",
+    name: "Formik Components",
+    component: FormikBasicComponentsPage,
+  },
+  {
+    path: "/formik-abstract",
+    name: "Formik Abstract",
+    component: FormikBasicAbstractPage,
+  },
   //   {
   //     path: "/",
   //     name: "Home",
