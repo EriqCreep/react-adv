@@ -8,6 +8,8 @@ import {
   FormikBasicYupPage,
   FormikBasicComponentsPage,
   FormikBasicAbstractPage,
+  RegisterFormikPage,
+  FormikDynamicFormPage,
 } from "../forms/pages";
 // import { AboutPage } from "../lazyload/pages/AboutPage";
 // import { HomePage } from "../lazyload/pages/HomePage";
@@ -76,6 +78,16 @@ export const routes: Route[] = [
     name: "Formik Abstract",
     component: FormikBasicAbstractPage,
   },
+  {
+    path: "/formik-register",
+    name: "Formik Register",
+    component: RegisterFormikPage,
+  },
+  {
+    path: "/formik-dynamic",
+    name: "Formik Dynamic",
+    component: FormikDynamicFormPage,
+  }
   //   {
   //     path: "/",
   //     name: "Home",

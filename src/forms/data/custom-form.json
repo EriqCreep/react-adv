@@ -1,0 +1,49 @@
+[
+  {
+    "type": "input-text",
+    "name": "name",
+    "label": "Name",
+    "placeholder": "Name",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      }
+    ]
+  },
+  {
+    "type": "input-email",
+    "name": "email",
+    "label": "Email",
+    "placeholder": "Email",
+    "value": "johndoe@gmail.com"
+  },
+  {
+    "type": "input-password",
+    "name": "password",
+    "label": "Password",
+    "placeholder": "Password",
+    "value": "123456"
+  },
+  {
+    "type": "select",
+    "name": "country",
+    "label": "Country",
+    "placeholder": "Country",
+    "value": "",
+    "options": [
+      {
+        "label": "Mexico",
+        "value": "mx"
+      },
+      {
+        "label": "USA",
+        "value": "us"
+      },
+      {
+        "label": "India",
+        "value": "in"
+      }
+    ]
+  }
+]
